@@ -1,1 +1,1 @@
-worker: python malwarebot.py
+web: python malwarebot.py
