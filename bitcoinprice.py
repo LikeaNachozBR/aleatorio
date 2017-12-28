@@ -11,4 +11,7 @@ conteudo = resposta.read().decode(errors='ignore')
 conteudo = Bs(conteudo, 'lxml')
 conteudo = conteudo.find('span', {'class': 'push-data '}).contents[0]
 print('O PREÇO DO BITCOIN É DE ${}'.format(conteudo))
-input()
+conteudo = conteudo.replace(',', '')
+conteudo = float(conteudo)
+bitcoins = float(input('Quantas bitcoins você tem? '))
+print('Você tem ${}'.format(conteudo * bitcoins))
